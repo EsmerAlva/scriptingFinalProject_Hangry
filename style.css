@@ -29,9 +29,9 @@ h1{
   height: 130px;
   width: 100px;
 }
-.content {
+/* .content {
   min-height: calc(100vh - 70px);
-}
+}*/
 .footer {
   height: 50px;
 }
