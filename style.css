@@ -29,9 +29,10 @@ h1{
   height: 130px;
   width: 100px;
 }
-/* .content {
-  min-height: calc(100vh - 70px);
-}*/
+.disclaimer{
+  color: white;
+  text-align: center;
+}
 .footer {
   height: 50px;
 }
