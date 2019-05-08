@@ -6,7 +6,7 @@ body{
 }
 h1{
   text-align: center;
-  
+
 }
 
 
@@ -37,4 +37,9 @@ h1{
 }
 .footer {
   height: 100px;
+}
+
+.foodItem{
+  border-radius: 80%;
+  -webkit-box-shadow:0 0 10px 5px white, 10px -10px 10px #a52165, 10px 10px 10px #ffb7dc, -10px 10px 10px #ffc9e4, -10px -10px 10px #ffc9e4;
 }
