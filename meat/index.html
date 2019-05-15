@@ -4,22 +4,25 @@
   <!-- I'm Hungry -->
   <title>hANGRY</title>
   <meta charset="utf-8">
-  <h1>I'M HUNGRY, TELL ME WHAT TO EAT</h1>
   <link href="../style.css" rel="stylesheet" type="text/css"/>
 </head>
 
-<body>
-
-  <p><br> <img src="images/happyFace01.png" width="200">
+<body onload="blink()" >
+  <p><br>
+    <div><img id="face" src="images/happy01.png" width="40%"></div>
+    <div>
     <br>So you want to eat meat:
     <br>What are you in the mood for?
     <br>
+  </div>
   </p>
+  <div>
   <form>
     <a href="bbq/index.html"><img src="images/bbq.png" width=200></a>
     <a href="burgers/index.html"><img src="images/burger.png" width=200></a> <br>
     <a href="../index.html"><img src="images/home.png" width=100></a>
   </form>
+</div>
 
   <div class="disclaimer">
     <br><br><br><br><br><br><br><br>
@@ -30,4 +33,43 @@
   <footer class="footer"></footer>
 
 </body>
-<html>
+<script>
+var im = document.getElementById("face");
+var imagesHappy = ["images/happy01.png","images/happy02.png"];
+var images = ["images/happy02.png","images/blink01.png"];
+var imagesAnnoyed = ["images/annoyed01.png","images/annoyed02.png"]
+var index=0;
+var counter = 0;
+
+  function blink() {
+    if(counter < 4){
+      im.setAttribute("src", imagesHappy[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+    }
+    if(counter >= 4 && counter < 16){
+      im.setAttribute("src", images[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+    }
+    if(counter >= 16){
+      im.setAttribute("src", imagesAnnoyed[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+      if(counter%4==0){
+        im.setAttribute("src", imagesComments[index]);
+      }
+    }
+  }
+  setInterval(blink, 1500);
+  </script>
+</html>

@@ -4,16 +4,16 @@
   <!-- I'm Hungry -->
   <title>hANGRY</title>
   <meta charset="utf-8">
-  <h1>I'M HUNGRY, TELL ME WHAT TO EAT</h1>
   <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 
-  <body>
-  <br>Welcome to Hangry!<br>
+  <body onload="blink()">
   <p>
-    This is Hannah.
-    <br>She will help you decide what your next meal should be.<br><br>
-    <img class="face" src="images/face01.png" onmouseover="this.src='images/blink01.png';" onmouseout="this.src='images/face01.png';">
+    <div><img id="face" src="images/face01.png", width = 40%></div>
+    <div class="speech-bubble">
+      <p><strong>Hi! Welcome to hANGRY!</strong></p>
+      <p>I'm Hannah and I'm here to help <br>you find out what you want to eat!</p>
+    </div>
     <br>
     What is your dietary preference? Please select an option below.
     <br><br>
@@ -37,4 +37,35 @@
   <footer class="footer"></footer>
 </body>
 
+<script>
+var im = document.getElementById("face");
+
+var images = ["images/face01.png","images/blink01.png"];
+var imagesAnnoyed = ["images/annoyed01.png","images/annoyed02.png"]
+var index=0;
+var counter = 0;
+
+  function blink() {
+    if(counter < 16){
+      im.setAttribute("src", images[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+    }
+    if(counter >= 16){
+      im.setAttribute("src", imagesAnnoyed[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+      if(counter%4==0){
+        im.setAttribute("src", imagesComments[index]);
+      }
+    }
+  }
+setInterval(blink, 1500);
+</script>
 <html>
