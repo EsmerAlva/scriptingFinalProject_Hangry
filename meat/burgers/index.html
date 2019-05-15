@@ -7,13 +7,16 @@
   <h1>BURGERS</h1>
   <link href="../../style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-
-  <p><br>Here are some options for burgers with meat.
-    <br>If an option interests you, hover over it to see what kind of burger it is.
-    <br>If you want to choose that option, click on the image and a new tab will appear
-    <br>with locations that serve this type of burger.
-    <br>press the back button for different options or home button to start over.
+<body onload="blink()">
+  <p><br>
+    <div><img id="face" src="images/happy01.png" width = "40%"></div>
+    <div class="speech-bubble">
+      <p><strong>Here are some options for burgers.</strong></p>
+      <p>If an option interests you, hover over it to see what kind of burger it is.
+      <br>If you want to choose that option, click on the image and a new tab will appear
+      <br>with locations that serve this type of burger.
+      <br>press the back button for different options or home button to start over</p>
+    </div>
     <br>
   </p>
   <form>
@@ -47,4 +50,35 @@
   <footer class="footer"></footer>
 
 </body>
+<script>
+var im = document.getElementById("face");
+
+var images = ["images/happy01.png","images/blink01.png"];
+var imagesAnnoyed = ["images/annoyed01.png","images/annoyed02.png"]
+var index=0;
+var counter = 0;
+
+  function blink() {
+    if(counter < 16){
+      im.setAttribute("src", images[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+    }
+    if(counter >= 16){
+      im.setAttribute("src", imagesAnnoyed[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+      if(counter%4==0){
+        im.setAttribute("src", imagesComments[index]);
+      }
+    }
+  }
+setInterval(blink, 1500);
+</script>
 <html>

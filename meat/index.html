@@ -10,16 +10,22 @@
 <body onload="blink()" >
   <p><br>
     <div><img id="face" src="images/happy01.png" width="40%"></div>
-    <div>
-    <br>So you want to eat meat:
-    <br>What are you in the mood for?
-    <br>
+  <div class="speech-bubble">
+    <p><strong>Meat sounds good!</strong></p>
+    <p>What are you in the mood for?
+    <br>please select the option you'd like to explore more
+    <br>or press the home button to return to the home page.</p>
   </div>
   </p>
   <div>
   <form>
-    <a href="bbq/index.html"><img src="images/bbq.png" width=200></a>
-    <a href="burgers/index.html"><img src="images/burger.png" width=200></a> <br>
+    <div class="tooltip"> <a href="bbq/index.html"><img src="images/bbq.png" width=200></a>
+      <span class="tooltiptext">BBQ!</span>
+    </div>
+    <div class="tooltip"> <a href="burgers/index.html"><img src="images/burger.png" width=200></a>
+      <span class="tooltiptext">Burgers!</span>
+    </div>
+    <br><br>
     <a href="../index.html"><img src="images/home.png" width=100></a>
   </form>
 </div>

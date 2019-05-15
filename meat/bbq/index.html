@@ -7,31 +7,34 @@
   <h1>BARBEQUE</h1>
   <link href="../../style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-
-  <p><br>Here are some options for Barbeque.
-    <br>If an option interests you, hover over it to see what kind of bbq it is.
-    <br>If you want to choose that option, click on the image and a new tab will appear
-    <br>with locations that serve this type of bbq.
-    <br>press the back button for different options or home button to start over.
+<body onload="blink()">
+  <p><br>
+    <div><img id="face" src="images/happy01.png" width = "40%"></div>
+    <div class="speech-bubble">
+      <p><strong>Here are some options for Barbeque.</strong></p>
+      <p>If an option interests you, hover over it to see what kind of burger it is.
+      <br>If you want to choose that option, click on the image and a new tab will appear
+      <br>with locations that serve this type of burger.
+      <br>press the back button for different options or home button to start over</p>
+    </div>
     <br>
   </p>
   <form>
-    <div class="tooltip"> <a href="" rel="noopener noreferrer" target="_blank"><img class="foodItem" src="images/spareRibs.png" width=212></a>
-      <span class="tooltiptext">Spare Ribs!</span>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=7pPbXOjBAuyI_QajkJGACw&q=+ribs+near+me&oq=+ribs+near+me&gs_l=psy-ab.3..0i67j0i7i30l9.5748.5748..5956...0.0..0.90.90.1......0....1..gws-wiz.......0i71.aX4QOvSR2xA" rel="noopener noreferrer" target="_blank"><img class="foodItem" src="images/spareRibs.png" width=212></a>
+      <span class="tooltiptext">Ribs!</span>
     </div>
-    <div class="tooltip"> <a href="" rel="noopener noreferrer" target="_blank"><img class="foodItem" src="images/turkeyBurger.jpg" width=212></a>
-      <span class="tooltiptext">Spare Ribs!</span>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=9ZPbXLO-E8W5ggfBoZ3YDA&q=bbq+shrimp+near+me&oq=bbq+shrimp+near+me&gs_l=psy-ab.3..0j0i22i30l3j0i22i10i30j0i22i30l5.20134.24628..24716...3.0..0.120.1653.19j2......0....1..gws-wiz.......0i71j35i39j0i67j0i131j0i20i263j0i13j0i13i30j33i160j0i13i5i30j0i8i13i30.d3rzlOzmEiw" rel="noopener noreferrer" target="_blank"><img class="foodItem" src="images/bbqShrimp.png" width=212></a>
+      <span class="tooltiptext">Shrimp!</span>
     </div>
-    <div class="tooltip"> <a href="" rel="noopener noreferrer" target="_blank"><img class="foodItem" src="images/turkeyBurger.jpg" width=212></a>
-      <span class="tooltiptext">Spare Ribs!</span>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=D5TbXODMBsa5ggeu-L7YAg&q=bbq+kabobs+near+me&oq=bbq+kabobs+near+me&gs_l=psy-ab.3..0j0i22i30l2.18494.22197..22262...1.0..0.214.1456.17j0j1......0....1..gws-wiz.......0i71j35i39j0i67j0i131j0i20i263j0i10.X7SpMkUGwJc" rel="noopener noreferrer" target="_blank"><img class="foodItem" src="images/kabobs.png" width=212></a>
+      <span class="tooltiptext">Kabobs!</span>
     </div>
     <br><br><br><br>
-    <div class="tooltip"> <a href="" rel="noopener noreferrer" target="_blank"><img class="foodItem" src="images/turkeyBurger.jpg" width=212></a>
-      <span class="tooltiptext">Spare Ribs!</span>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=JpTbXOvNIMSV_QbTrYPoCw&q=bbq+grilled+steak+near+me&oq=bbq+grilled+steak+near+me&gs_l=psy-ab.3...11683.18444..18788...0.0..0.127.2227.18j7......0....1..gws-wiz.......0i71j35i39j0i67j0j0i131j0i20i263j0i10j0i131i67j0i13j0i13i30j0i13i10i30j0i22i30j0i13i5i30j0i8i13i30j33i299j33i160j33i22i29i30j33i22i10i29i30.2n36g6EcS6w" rel="noopener noreferrer" target="_blank"><img class="foodItem" src="images/grilledSteak.png" width=212></a>
+      <span class="tooltiptext">Grilled Steak!</span>
     </div>
-    <div class="tooltip"> <a href="" rel="noopener noreferrer" target="_blank"><img class="foodItem" src="images/turkeyBurger.jpg" width=212></a>
-      <span class="tooltiptext">Spare Ribs!</span>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=OpTbXMqFG82Jgged8K6ACw&q=korean+bbq+near+me&oq=korean+bbq+near+me&gs_l=psy-ab.3..0l10.16938.19329..19388...0.0..0.192.1395.16j1......0....1..gws-wiz.......0i71j35i39j0i131j0i67.cyytzq4Ug4g" rel="noopener noreferrer" target="_blank"><img class="foodItem" src="images/koreanbbq.png" width=212></a>
+      <span class="tooltiptext">Korean BBQ!</span>
     </div>
     <br><br><br>
     <a href="../../index.html"><img src="images/home.png" width=100></a> <br>
@@ -47,4 +50,35 @@
   <footer class="footer"></footer>
 
 </body>
+<script>
+var im = document.getElementById("face");
+
+var images = ["images/happy01.png","images/blink01.png"];
+var imagesAnnoyed = ["images/annoyed01.png","images/annoyed02.png"]
+var index=0;
+var counter = 0;
+
+  function blink() {
+    if(counter < 16){
+      im.setAttribute("src", images[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+    }
+    if(counter >= 16){
+      im.setAttribute("src", imagesAnnoyed[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+      if(counter%4==0){
+        im.setAttribute("src", imagesComments[index]);
+      }
+    }
+  }
+setInterval(blink, 1500);
+</script>
 <html>
