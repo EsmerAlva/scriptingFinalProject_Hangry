@@ -2,44 +2,47 @@
 <html>
 <head>
   <!-- I'm Hungry -->
-  <title>I'm Hungry</title>
+  <title>hANGRY</title>
   <meta charset="utf-8">
-  <h1>I DON'T KNOW</h1>
-  <link href="../style.css" rel="stylesheet" type="text/css"/>
+  <h1>SWEET</h1>
+  <link href="../../style.css" rel="stylesheet" type="text/css"/>
 </head>
 
-<body>
+<body onload ="blink()">
 
-  <p><img class="face" src="images/smug.png" onmouseover="this.src='images/smugBlink.png';" onmouseout="this.src='images/smug.png';", width ="200">
+  <p><img id="face" src="images/happy01.png" width ="200">
     <div class="speech-bubble">
-      <p><strong>So you don't know what you want?</strong></p>
-      Okay... We'll figure it out....
-      <br>What are you in the mood for?
+      <p><strong>Sweet sounds great!</strong></p>
+      <p>If an option interests you, hover over it to see more information.
+      <br>If you want to choose that option, click on the image and a new tab will appear
+      <br>with locations where you can find this option.
+      <br>press the back button for different options or home button to start over</p>
       <br></p>
     </div>
   </p>
   <form>
-    <div class="tooltip"> <a href=""><img class="tasteOp" src="images/sweet.png" width=200></a>
-      <span class="tooltiptext">Sweet!</span>
+    <div class="tooltip"> <a href="https://www.google.com/search?q=ice+cream+near+me&oq=ice+cream+near+me&aqs=chrome..69i57j0l5.1672j0j7&sourceid=chrome&ie=UTF-8" rel="noopener noreferrer" target="_blank"><img class="foodItem" class="tasteOp" src="images/iceCream.png" width=200></a>
+        <span class="tooltiptext">Ice Cream!</span>
+    </div>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=gjTcXLD8K7KJggf-04v4Cg&q=cake+near+me&oq=cake+near+me&gs_l=psy-ab.3..0i7i30l10.12297.12598..12711...0.0..0.107.356.2j2......0....1..gws-wiz.......0i71j38.cbnjhHcUKZw" rel="noopener noreferrer" target="_blank"><img class="foodItem" class="tasteOp" src="images/cake.png" width=200></a>
+        <span class="tooltiptext">Cake!</span>
     </div>
     <br><br>
-    <div class="tooltip"> <a href=""><img class="tasteOp" src="images/salty.png" width=200></a>
-      <span class="tooltiptext">Salty!</span>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=kDTcXMzfGOSW_QbyhIjAAQ&q=smores+near+me&oq=smores+near+me&gs_l=psy-ab.3..0j0i7i30j0i7i10i30l2j0i7i30j0i7i10i30l5.9975.10364..10477...0.0..0.96.483.6......0....1..gws-wiz.......0i71j38.uqZQ3gNmASM" rel="noopener noreferrer" target="_blank"><img class="foodItem" class="tasteOp" src="images/smores.png" width=200></a>
+        <span class="tooltiptext">S'mores!</span>
+    </div>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=djTcXLbDLuKh_Qa4nriYAQ&q=cookies+near+me&oq=cookies+near+me&gs_l=psy-ab.3..0j0i7i30l9.9242.10663..10782...1.0..0.96.779.9......0....1..gws-wiz.......0i71j0i7i10i30j0i13.mkP_lbiPVt8" rel="noopener noreferrer" target="_blank"><img class="foodItem" class="tasteOp" src="images/cookies.png" width=200></a>
+        <span class="tooltiptext">Cookies!</span>
     </div>
     <br><br>
-    <div class="tooltip"> <a href=""><img class="tasteOp" src="images/spicy.png" width=200></a>
-      <span class="tooltiptext">Spicy!</span>
-    </div>
-    <br><br>
-    <div class="tooltip"> <a href=""><img class="tasteOp" src="images/sour.png" width=200></a>
-      <span class="tooltiptext">Sour!</span>
-    </div>
-    <br><br>
-    <div class="tooltip"><a href=""><img class="tasteOp" src="images/fried.png" width=200></a>
-      <span class="tooltiptext">Fried!</span>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=nDTcXM7PBaiIgge_64LgAw&q=fruit+salad+near+me&oq=fruit+salad+near+me&gs_l=psy-ab.3..0j0i7i30l9.14703.15765..15910...0.0..0.117.948.10j1......0....1..gws-wiz.......0i71j38j0i324j0i13.rq8-ZnLg6VY" rel="noopener noreferrer" target="_blank"><img class="foodItem" class="tasteOp" src="images/fruitSalad.png" width=200></a>
+        <span class="tooltiptext">fruit salad!</span>
     </div>
     <br><br><br><br>
-    <a href="../index.html"><img src="images/home.png" width=100></a>
+    <a href="../../index.html"><img src="images/home.png" width=100></a>
+    <br>
+    <a href="../index.html"><img src="images/back.png" width=80></a>
+
   </form>
 
   <div class="disclaimer">
@@ -51,4 +54,35 @@
   <footer class="footer"></footer>
 
 </body>
+<script>
+var im = document.getElementById("face");
+
+var images = ["images/face01.png","images/blink01.png"];
+var imagesAnnoyed = ["images/annoyed01.png","images/annoyed02.png"]
+var index=0;
+var counter = 0;
+
+  function blink() {
+    if(counter < 16){
+      im.setAttribute("src", images[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+    }
+    if(counter >= 16){
+      im.setAttribute("src", imagesAnnoyed[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+      if(counter%4==0){
+        im.setAttribute("src", imagesComments[index]);
+      }
+    }
+  }
+setInterval(blink, 1500);
+</script>
 <html>
