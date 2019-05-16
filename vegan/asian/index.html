@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- I'm Hungry -->
+  <title>hANGRY</title>
+  <h1>ASIAN CUISINE</h1>
+  <meta charset="utf-8">
+  <link href="../../style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body onload="blink()" >
+  <p><br>
+    <div><img id="face" src="images/happy01.png" width="40%"></div>
+    <div class="speech-bubble">
+      <p><strong>Asian Cuisine sounds great!</strong></p>
+      <p>If an option interests you, hover over it to see more information.
+      <br>If you want to choose that option, click on the image and a new tab will appear
+      <br>with locations where you can find this option or a recipe.
+      <br>press the back button for different options or home button to start over</p>
+      <br></p>
+    </div>
+  </p>
+  <div>
+  <form>
+    <div class="tooltip"> <a href="https://www.google.com/search?q=indian+restaurants+near+me&oq=indian+resa&aqs=chrome.1.69i57j0l5.2287j0j9&sourceid=chrome&ie=UTF-8" target="_blank"><img class="foodItem" src="images/matarPaneer.png" width=212></a>
+      <span class="tooltiptext">Indian Matar Paneer!</span>
+    </div>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=jsXcXI2sMYWyggfhhZWoCQ&q=chinese+restaurants+near+me&oq=chinese+restaurants+near+me&gs_l=psy-ab.3..0j0i7i30l2j0l3j0i7i10i30j0i7i30j0l2.16607.17284..17462...0.0..0.84.612.8......0....1..gws-wiz.......0i71j0i13.oAzKuyG23rM" target="_blank"><img class="foodItem" src="images/generalTsoTofu.png" width=212></a>
+      <span class="tooltiptext">Chinese General Tso Tofu!</span>
+    </div>
+    <br><br>
+    <div class="tooltip"> <a href="https://www.google.com/search?q=indian+restaurants+near+me&oq=indian+resa&aqs=chrome.1.69i57j0l5.2287j0j9&sourceid=chrome&ie=UTF-8" target="_blank"><img class="foodItem" src="images/alooGobiMasala.png" width=212></a>
+      <span class="tooltiptext">Aloo Gobi Masala!</span>
+    </div>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=jsXcXI2sMYWyggfhhZWoCQ&q=chinese+restaurants+near+me&oq=chinese+restaurants+near+me&gs_l=psy-ab.3..0j0i7i30l2j0l3j0i7i10i30j0i7i30j0l2.16607.17284..17462...0.0..0.84.612.8......0....1..gws-wiz.......0i71j0i13.oAzKuyG23rM" target="_blank"><img class="foodItem" src="images/veggieFriedRice.png" width=212></a>
+      <span class="tooltiptext">Veggie Fried Rice!</span>
+    </div>
+    <br><br>
+    <div class="tooltip"> <a href="https://www.vegetarianyums.com/filipino-lumpia-recipe.html" target="_blank"><img class="foodItem" src="images/lumpia.png" width=212></a>
+      <span class="tooltiptext">Vegetarian Filipino Lumpia!</span>
+    </div>
+    <div class="tooltip"> <a href="https://www.vegetarianyums.com/rice-and-beans-recipe.html" target="_blank"><img class="foodItem" src="images/riceBean.png" width=212></a>
+      <span class="tooltiptext">Filipino Beans & Rice!</span>
+    </div>
+    <br><br>
+    <a href="../../index.html"><img src="images/home.png" width=100></a> <br>
+    <a href="../index.html"><img src="images/back.png" width=80></a>
+  </form>
+</div>
+
+  <div class="disclaimer">
+    <br><br><br><br><br><br><br><br>
+    Disclaimer: Hangry Hannah is only here to help with suggestions <br>
+    She won't be able to give you a specific place to eat but is here<br>
+    to help you decide what you're in the mood to eat
+  </div>
+  <footer class="footer"></footer>
+
+</body>
+<script>
+var im = document.getElementById("face");
+var imagesHappy = ["images/happy01.png","images/happy02.png"];
+var images = ["images/happy02.png","images/blink01.png"];
+var imagesAnnoyed = ["images/annoyed01.png","images/annoyed02.png"]
+var index=0;
+var counter = 0;
+
+  function blink() {
+    if(counter < 4){
+      im.setAttribute("src", imagesHappy[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+    }
+    if(counter >= 4 && counter < 16){
+      im.setAttribute("src", images[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+    }
+    if(counter >= 16){
+      im.setAttribute("src", imagesAnnoyed[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+      if(counter%4==0){
+        im.setAttribute("src", imagesComments[index]);
+      }
+    }
+  }
+  setInterval(blink, 1500);
+  </script>
+</html>

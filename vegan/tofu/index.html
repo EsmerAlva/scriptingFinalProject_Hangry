@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- I'm Hungry -->
+  <title>hANGRY</title>
+  <h1>TOFU</h1>
+  <meta charset="utf-8">
+  <link href="../../style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body onload="blink()" >
+  <p><br>
+    <div><img id="face" src="images/happy01.png" width="40%"></div>
+    <div class="speech-bubble">
+      <p><strong>Tofu sounds great!</strong></p>
+      <p>If an option interests you, hover over it to see more information.
+      <br>If you want to choose that option, click on the image and a new tab will appear
+      <br>with locations where you can find this option or a recipe.
+      <br>press the back button for different options or home button to start over</p>
+      <br>
+    </div>
+  </p>
+  <div>
+  <form>
+    <div class="tooltip"> <a href="https://veganyumminess.com/scrambled-tofu-revisited-breakfast-burritos/" target="_blank"><img class="foodItem" src="images/scrambledTofu.png" width=212></a>
+      <span class="tooltiptext">Scrambled Tofu & Breakfast Burritos!</span>
+    </div>
+    <div class="tooltip"> <a href="https://dietitiandebbie.com/2015/07/21/mini-vegan-frittatas/" target="_blank"><img class="foodItem" src="images/frittatas.png" width=212></a>
+      <span class="tooltiptext">Mini Vegan Frittatas!</span>
+    </div>
+    <br><br>
+    <div class="tooltip"> <a href="https://gourmandelle.com/vegan-crustless-asparagus-quiche/" target="_blank"><img class="foodItem" src="images/quiche.png" width=212></a>
+      <span class="tooltiptext">Asparagus Quiche!</span>
+    </div>
+    <div class="tooltip"> <a href="https://thekitchenpaper.com/curry-tofu-breakfast-scramble/" target="_blank"><img class="foodItem" src="images/curryTofuScramble.png" width=212></a>
+      <span class="tooltiptext">Curry Tofu Breakfast Scramble!</span>
+    </div>
+    <br><br>
+    <div class="tooltip"> <a href="https://www.connoisseurusveg.com/silken-tofu-cacao-nib-blender-pancakes" target="_blank"><img class="foodItem" src="images/pancakes.png" width=212></a>
+      <span class="tooltiptext">Blender Silken Tofu Pancakes!</span>
+    </div>
+    <div class="tooltip"> <a href="https://www.liveeatlearn.com/almond-crusted-baked-tofu-nuggets/" target="_blank"><img class="foodItem" src="images/nuggets.png" width=212></a>
+      <span class="tooltiptext">Almond Crusted Baked Tofu Nuggets!</span>
+    </div>
+    <br><br>
+    <a href="../../index.html"><img src="images/home.png" width=100></a> <br>
+    <a href="../index.html"><img src="images/back.png" width=80></a>
+  </form>
+</div>
+
+  <div class="disclaimer">
+    <br><br><br><br><br><br><br><br>
+    Disclaimer: Hangry Hannah is only here to help with suggestions <br>
+    She won't be able to give you a specific place to eat but is here<br>
+    to help you decide what you're in the mood to eat
+  </div>
+  <footer class="footer"></footer>
+
+</body>
+<script>
+var im = document.getElementById("face");
+var imagesHappy = ["images/happy01.png","images/happy02.png"];
+var images = ["images/happy02.png","images/blink01.png"];
+var imagesAnnoyed = ["images/annoyed01.png","images/annoyed02.png"]
+var index=0;
+var counter = 0;
+
+  function blink() {
+    if(counter < 4){
+      im.setAttribute("src", imagesHappy[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+    }
+    if(counter >= 4 && counter < 16){
+      im.setAttribute("src", images[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+    }
+    if(counter >= 16){
+      im.setAttribute("src", imagesAnnoyed[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+      if(counter%4==0){
+        im.setAttribute("src", imagesComments[index]);
+      }
+    }
+  }
+  setInterval(blink, 1500);
+  </script>
+</html>

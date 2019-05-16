@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- I'm Hungry -->
+  <title>hANGRY</title>
+  <meta charset="utf-8">
+  <h1>SOUR</h1>
+  <link href="../../style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body onload ="blink()">
+
+  <p><img id="face" src="images/happy01.png" width ="200">
+    <div class="speech-bubble">
+      <p><strong>Sour sounds great!</strong></p>
+      <p>If an option interests you, hover over it to see more information.
+      <br>If you want to choose that option, click on the image and a new tab will appear
+      <br>with locations where you can find this option.
+      <br>press the back button for different options or home button to start over</p>
+      <br></p>
+    </div>
+  </p>
+  <form>
+    <div class="tooltip"> <a href="https://www.google.com/search?q=reuben+sandwich+near+me&oq=reuben+sandwich&aqs=chrome.1.69i59j0l5.3207j0j9&sourceid=chrome&ie=UTF-8" rel="noopener noreferrer" target="_blank"><img class="foodItem" class="tasteOp" src="images/reuben.png" width=200></a>
+        <span class="tooltiptext">Reuben Sandwhich!</span>
+    </div>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=xy3cXNTQGqWQ_QbF97rwAg&q=grapefruit+on+sale+near+me&oq=grapefruit+near+me&gs_l=psy-ab.1.0.0i71l8.0.0..6547...0.0..0.0.0.......0......gws-wiz.6ibG5GCUCyQ" rel="noopener noreferrer" target="_blank"><img class="foodItem" class="tasteOp" src="images/grapefruit.png" width=200></a>
+        <span class="tooltiptext">Grapefruit!</span>
+    </div>
+    <br><br>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=zy3cXNzGEcqa_Qamh7ww&q=tamarind+on+sale+near+me&oq=tamarind+on+sale+near+me&gs_l=psy-ab.3...12628.14306..14402...2.0..0.112.785.9j1......0....1..gws-wiz.......0i71j0i7i30.VueJxsJkLf0" rel="noopener noreferrer" target="_blank"><img class="foodItem" class="tasteOp" src="images/tamarind.png" width=200></a>
+        <span class="tooltiptext">Tamarind!</span>
+    </div>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=7C3cXJ3mE6i7ggfEzpD4Dg&q=kimchi+near+me&oq=kimchi+near+me&gs_l=psy-ab.3..0j0i7i30l9.5935.6670..6880...0.0..0.73.215.3......0....1..gws-wiz.......0i71j0i13j0i13i5i30.QKFiscvm8gw" rel="noopener noreferrer" target="_blank"><img class="foodItem" class="tasteOp" src="images/kimchi.png" width=200></a>
+        <span class="tooltiptext">Kimchi!</span>
+    </div>
+    <br><br>
+    <div class="tooltip"> <a href="https://www.google.com/search?ei=9C3cXOmEKK-5ggeJ_LS4DA&q=sweet+and+sour+chicken+near+me&oq=sweet+and+sou+near+me&gs_l=psy-ab.1.0.0i7i30l10.10804.12066..12731...0.0..0.193.1163.11j2......0....1..gws-wiz.......0i71j0i7i10i30.oAypj2Y4CZY" rel="noopener noreferrer" target="_blank"><img class="foodItem" class="tasteOp" src="images/chicken.png" width=200></a>
+        <span class="tooltiptext">Sweet&Sour Chicken!</span>
+    </div>
+    <br><br><br><br>
+    <a href="../../index.html"><img src="images/home.png" width=100></a>
+    <br>
+    <a href="../index.html"><img src="images/back.png" width=80></a>
+  </form>
+
+  <div class="disclaimer">
+    <br><br><br><br><br><br><br><br>
+    Disclaimer: Hangry Hannah is only here to help with suggestions <br>
+    She won't be able to give you a specific place to eat but is here<br>
+    to help you decide what you're in the mood to eat
+  </div>
+  <footer class="footer"></footer>
+
+</body>
+<script>
+var im = document.getElementById("face");
+
+var images = ["images/face01.png","images/blink01.png"];
+var imagesAnnoyed = ["images/annoyed01.png","images/annoyed02.png"]
+var index=0;
+var counter = 0;
+
+  function blink() {
+    if(counter < 16){
+      im.setAttribute("src", images[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+    }
+    if(counter >= 16){
+      im.setAttribute("src", imagesAnnoyed[index]);
+      index++;
+      counter++;
+      if(index >= images.length){
+        index=0;
+      }
+      if(counter%4==0){
+        im.setAttribute("src", imagesComments[index]);
+      }
+    }
+  }
+setInterval(blink, 1500);
+</script>
+<html>
